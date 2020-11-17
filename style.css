@@ -1,0 +1,415 @@
+/*---------------------------------acceder.html------------------------------*/
+/*General*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Cuerpo*/
+body {
+    font-family: Tahoma, serif;
+    background-image: url("https://www.publicdomainpictures.net/pictures/270000/velka/sky-blue-background-1537733271HQq.jpg");
+}
+
+/*Titúlo: Acceder*/
+.titulo {
+    margin-top: 65px;
+    text-align: center;
+    color: white;
+    /*margin-bottom: 10px;*/
+    font-size: 20px;
+}
+
+/*Titúlo: Login*/
+.form-login h2 {
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid; /*linea:Separador1*/
+    color: black;
+    font-size: 13px;
+}
+
+/*Recuadro grande: form-login*/
+.form-login {
+    width: 400px;
+    height: 500px;
+    background: white;
+    margin: auto;
+    margin-top: 45px;
+    box-shadow: 7px 13px 37px #000;
+    padding: 20px 30px;
+    color: white;
+}
+
+/*Recuadros: Correo & password*/
+.recuadros {
+    width: 100%;
+    border: 2px solid #017bab;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    background: white;
+    font-size: 14px;
+}
+
+/*Boton: Ingresar*/
+.btnIngresar {
+    width: 100%;
+    height: 40px;
+    background: #fdd835;
+    border: none;
+    color: black;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+/*Boton: Ingresar*/
+.btnIngresar:hover {
+    font-size: 20px;
+}
+
+/*linea:Separador1*/
+.form-login p {
+    height: 40px;
+    text-align: center;
+    border-bottom: 1px solid;
+    color: black;
+    margin-bottom: 30px;
+}
+
+/*Texto: Olvidaste tu contraseña*/
+.form-login a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/*Texto: Olvidaste tu contraseña Subrayado*/
+.form-login a:hover {
+    text-decoration: underline;
+}
+
+/*Boton: CrearCuenta*/
+.btnCrearCuenta {
+    width: 100%;
+    height: 40px;
+    background: #27ae60;
+    border: none;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+/*Boton: CrearCuenta*/
+.btnCrearCuenta:hover {
+    font-size: 20px;
+}
+
+/*Boton: Google*/
+.btnGoogle {
+    width: 100%;
+    background: #e53935;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    color: white;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    background-image: url(https://img2.freepng.es/20180324/iww/kisspng-google-logo-g-suite-google-5ab6f1cee66464.5739288415219388949437.jpg);
+    background-repeat: no-repeat;
+    background-size: 10% 80%;
+    background-position: 20px;
+    transition: 0.4s ease;
+}
+
+/*Boton: Google zoom*/
+.btnGoogle:hover {
+    font-size: 17px;
+}
+
+/*Boton: Facebook*/
+.btnFacebook {
+    width: 100%;
+    background: #0033FF;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    color: white;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s ease;
+    background-image: url(https://icon-library.com/images/facebook-icon-logo-png/facebook-icon-logo-png-7.jpg);
+    background-repeat: no-repeat;
+    background-size: 10% 80%;
+    background-position: 20px;
+}
+
+/*Boton: Facebook zoom*/
+.btnFacebook:hover {
+    font-size: 17px;
+}
+
+/*---------------------------------index.html------------------------------*/
+
+/*Boton: Acceder*/
+.btnAcceder {
+    padding: 15px 20px;
+    color: black;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    background-position: 200px;
+    background-color: #fdd835;
+    font-family: Verdana, serif;
+    position: absolute;
+    right: 21%;
+    margin-top: 1px;
+    border-radius: 6px;
+    transition: 0.4s ease;
+}
+
+/*Boton: Acceder zoom*/
+.btnAcceder:hover {
+    font-size: 15px;
+}
+
+/*Texto: Explorador de fútbol mexicano*/
+.info1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/*Texto: La mejor plataforma*/
+.info2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/*Texto: La mejor plataforma*/
+.logotipo {
+    position: absolute;
+    left: 9%;
+}
+
+/*Boton: GooglePlay*/
+.btnGooglePlay {
+    /*width: 100%;*/
+    /*background: black;*/
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    color: white;
+    /*font-size: 15px;*/
+    border: none;
+    cursor: pointer;
+    /*transition: 0.4s ease;*/
+    /*background-image: url(https://icon-library.com/images/facebook-icon-logo-png/facebook-icon-logo-png-7.jpg);*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: 10% 80%;*/
+    /*background-position: 20px;*/
+}
+
+/*Boton: GooglePlay zoom*/
+.btnGooglePlay:hover img {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/*---------------------------------nuevoUsuario.html------------------------------*/
+
+/*Titúlo: Registro*/
+.registroUsuario h2 {
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid; /*linea:Separador1*/
+    color: black;
+    font-size: 13px;
+}
+
+/*Recuadro grande: registroUsuario*/
+.registroUsuario {
+    width: 400px;
+    height: 410px;
+    background: white;
+    margin: auto;
+    margin-top: 45px;
+    box-shadow: 7px 13px 37px #000;
+    padding: 20px 30px;
+    color: white;
+}
+/*Boton: Registrarse*/
+.btnRegistrarse {
+    width: 100%;
+    height: 40px;
+    background: limegreen;
+    /*#fdd835*/
+    border: none;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+/*Boton: Registrarse*/
+.btnRegistrarse:hover {
+    font-size: 20px;
+}
+
+/*-----------------scout.html---------------------*/
+/*Boton: Acceder*/
+.btnLogout {
+    /*padding: 15px 20px;*/
+    /*color: black;*/
+    /*font-size: 13px;*/
+    border: none;
+    cursor: pointer;
+    background-position: 200px;
+    /*background-color: #fdd835;*/
+    /*font-family: Verdana, serif;*/
+    position: absolute;
+    right: 21%;
+    margin-top: 1px;
+    border-radius: 6px;
+    transition: 0.4s ease;
+}
+
+/*Boton: Acceder zoom*/
+.btnLogout:hover {
+    font-size: 15px;
+}
+
+/*Recuadros: buscar Jugador Equipo*/
+.buscarJE {
+    width: 250px;
+    border: 2px solid #017bab;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    background: white;
+    font-size: 14px;
+}
+
+
+
+/*@import "compass/css3";*/
+
+/***********************
+ * Essential Structure *
+ ***********************/
+.flexsearch--wrapper {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    overflow: hidden;
+    background: transparent;
+    margin: 0;
+    position: static;
+}
+
+.flexsearch--form {
+    overflow: hidden;
+    position: relative;
+}
+
+.flexsearch--input-wrapper {
+    padding: 0 66px 0 0; /* Right padding for submit button width */
+    overflow: hidden;
+}
+
+.flexsearch--input {
+    width: 100%;
+}
+
+/***********************
+ * Configurable Styles *
+ ***********************/
+.flexsearch {
+    padding: 0 10px 0 50px; /* Padding for other horizontal elements */
+}
+
+.flexsearch--input {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 50px;
+    padding: 0 46px 0 10px;
+    border-color: #888;
+    border-radius: 35px; /* (height/2) + border-width */
+    border-style: solid;
+    border-width: 5px;
+    margin-top: 15px;
+    color: #333;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.flexsearch--submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    border: none;
+    margin-top: 20px; /* margin-top + border-width */
+    margin-right: 5px; /* border-width */
+    background: transparent;
+    color: black;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 40px;
+    line-height: 60px;
+}
+
+.flexsearch--input:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.flexsearch--input:focus.flexsearch--submit {
+    color: #333;
+}
+
+.flexsearch--submit:hover {
+    color: #333;
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+    color: #888;
+}
+
+input:-moz-placeholder {
+    color: #888
+}
+
+/*!*****************/
+/* * Pretify demo **/
+/* ****************!*/
+/*.h1 {*/
+/*    float: left;*/
+/*    margin: 25px;*/
+/*    color: #333;*/
+/*    font-family: 'Helvetica', sans-serif;*/
+/*    font-size: 45px;*/
+/*    font-weight: bold;*/
+/*    line-height: 45px;*/
+/*    text-align: center;*/
+/*}*/
