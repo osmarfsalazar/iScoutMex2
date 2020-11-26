@@ -15,27 +15,44 @@ let db = firebase.firestore();
 
 //Login google
 $('#loginG').click(function () {
+    //Línea donde se capturará el rol [Obtener el dato de signup-rol-reg]
     let provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function (result) {
 
         console.log(result.user);
         //  $('#root').append("<img src='"+result.user.photoURL+"'/>")
         //   $('#root').append("<img stc='"+)
-        guardarDatos(result.user);
-        console.log('Se pudo acceder');
-        window.location.href='perfil.html'
+        let usuario = db.collection('users').doc(result.user.uid);
+        //Verificar si existe usuario
+        usuario.get().then( user => {
+            if (!user.exists) {
+                console.log("No existe el usuario");
+                guardarDatos(result.user);
+            }
+            else{
+                console.log("Ya existe");
+                //if(user.rol == "Scout"){}
+                if(user.rol == "scout"){
+                    //
+                }else if(user.rol == "jugador"){
 
+                }
+            }
+        });
+
+        console.log('Se pudo acceder');
     });
+
 })
 
 // Login with Facebook
 $('#loginF').click(function () {
+    //Línea donde se capturará el rol [Obtener el dato de signup-rol-reg]
     let provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithPopup(provider).then((result) => {
         console.log(result);
         guardarDatos(result.user);
         console.log('Se pudo acceder');
-        window.location.href='scout.html'
     })
         .catch(err => {
             console.log(err);
@@ -50,7 +67,7 @@ $('#ingresar').click(function () {
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then(function (user) {
             console.log('Credenciales correctas, ¡bienvenido!');
-            window.location.href='perfil.html'
+
         })
         .catch(function (error) {
             console.log(error);
@@ -61,16 +78,13 @@ $('#ingresar').click(function () {
 // Registro correo
 $('#registrarse').click(function () {
     const email = document.getElementById("signup-email-reg").value;
-    const password = document.getElementById("signup-password-reg").value;
-    // const rol = document.getElementById("signup-rol-reg").value;
-
+    const password = document.getElementById("signup-password-reg").value
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(function (result) {
             let usuario = {
                 uid: result.user.uid,
                 nombre: result.user.email,
                 email: result.user.email,
-                // Rol:rol,
                 img: "https://graph.facebook.com/3498960506864413/picture",
             }
             db.collection("users").doc(result.user.uid).set(usuario)
@@ -96,28 +110,50 @@ $('#logout').click(function () {
 })
 
 //Revisamos si ya se inició sesión
-/*
-$('#ingresar').click(function (){
+
+$('#aceptarPerfil').click(function (){
+    const rol = document.getElementById("signup-rol-reg").value;
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            window.location.href='iniciaSesion.html'
+            let usuario = {
+                uid: user.uid,
+                rol: rol
+            }
+             db.collection("users").doc(user.uid).update(usuario)
+            .then(function() {
+                //if(rol == "scout"){ window.location.href='iniciaSesion.html'}
+
+            })
+            .catch(function(error) {
+                console.error("Error writing database: ", error);
+            });
         } else {
             // User is signed out.
             // ...
         }
     });
 })
-* */
+
 //bd
 function guardarDatos(user) {
+
     let usuario = {
         uid: user.uid,
         nombre: user.displayName,
         email: user.email,
-        img: user.photoURL,
-        // Rol: rol
+        img: user.photoURL
     }
+    console.log(usuario);
+    //db.collection("users").doc(user.uid).set(usuario);
     db.collection("users").doc(user.uid).set(usuario)
+        .then(function() {
+            window.location.href='perfil.html'
+
+        })
+        .catch(function(error) {
+            console.error("Error writing database: ", error);
+        });
+
 }
 
 //update realtime
